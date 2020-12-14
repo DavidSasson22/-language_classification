@@ -1,0 +1,6 @@
+Statistics is a branch of mathematics dealing with the collection, analysis, interpretation, presentation, and 
+organization of data. In applying statistics to a scientific, industrial, or social problem, it is conventional to 
+begin with a statistical population or a statistical model process to be studied. Populations can be diverse topics 
+such as all people living in a country or every atom composing a crystal. Statistics deals with all aspects of data 
+including the planning of data collection in terms of the design of surveys and experiments.
+

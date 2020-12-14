@@ -1,0 +1,8 @@
+An experiment usually tests a hypothesis, which is an expectation about how a particular process or phenomenon
+works. However, an experiment may also aim to answer a what if question, without a specific expectation about what the
+experiment reveals, or to confirm prior results. If an experiment is carefully conducted, the results usually either 
+support or disprove the hypothesis. According to some philosophies of science, an experiment can never prove a
+hypothesis, it can only add support. On the other hand, an experiment that provides a counterexample can disprove a theory
+or hypothesis. An experiment must also control the possible confounding factors any factors that would mar the accuracy 
+or repeatability of the experiment or the ability to interpret the results. Confounding is commonly eliminated through 
+scientific controls and or, in randomized experiments, through random assignment.

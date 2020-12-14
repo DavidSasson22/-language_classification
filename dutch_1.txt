@@ -1,0 +1,6 @@
+Engineering of ingenieurswezen heeft als doel technische onderdelen, constructies en of systemen, zoals die van 
+een machine, hun functie te laten vervullen. Daartoe worden optredende en of gewenste processen, de werking
+ervan, uitgezocht en uitgewerkt. Individueel of in teamverband worden passende onderdelen ontworpen, optredende spanningen
+berekend en de te produceren onderdelen gemodelleerd en of op technische tekeningen gespecificeerd. In sommige vakgebieden 
+is onderhoud standaard onderdeel van de te verrichten werkzaamheden. Voor een groot deel van engineering zijn er normen 
+en afspraken opgesteld, zoals de Eurocodes, met oog op de gewenste veiligheid en praktische toepasbaarheid.
