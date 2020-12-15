@@ -31,8 +31,6 @@ def classify_unknow_text():
             return None
         if os.path.isfile(language1) and os.path.isfile(language2) and os.path.isfile(filename):
             condition = True
-        else:
-            condition = False
         if condition is False:
             print("File error: some files do not exist")
         else:
