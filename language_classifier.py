@@ -7,17 +7,20 @@ def build_language_model(language1_filename, language2_filename, k):
     of dictionaries for each file. it acts like 'compute_ngrams_frequency'
     but takes a file as parameter, rather than a string"""
     if os.path.isfile(language1_filename) and os.path.isfile(language2_filename):
+        result = []
         with open(language1_filename) as file:
             reader = file.read()
-            reader = reader.replace('\n', "")
+            reader = reader.replace('\n', " ")
             language1_dict = compute_ngrams_frequency(reader, k)
         with open(language2_filename) as file:
             reader = file.read()
-            reader = reader.replace('\n', "")
+            reader = reader.replace('\n', " ")
             language2_dict = compute_ngrams_frequency(reader, k)
             if language1_dict == {} or language2_dict == {}:
                 return None
-        return language1_dict, language2_dict
+        result.append(language1_dict)
+        result.append(language2_dict)
+        return result
     else:
         return None
 
@@ -60,22 +63,29 @@ def compute_relative_distance(source, dict1, dict2):
 
 
 def classify_language(text_to_classify, list_of_dicts1, list_of_dicts2, threshold):
-    """this function determines whether a txt file is writen is one language
+    """this function determines whether a txt file is writen in one language
     or another, using relative distances and a threshold value"""
     if threshold > 0.5:
         print("ERROR: threshold > 0.5")
         return None
-    k = 14
+    a = len(list_of_dicts1)
+    b = len(list_of_dicts2)
+    c = len(text_to_classify)
+    if a <= b and a <= c:
+        k = a
+    elif b <= a and c >= b:
+        k = b
+    else:
+        k = c
     classify_dicts = from_txt_to_ngrams(text_to_classify, k)
-    n = 1
+    n = 0
     while n < k:
-        if classify_dicts[n] != {} and list_of_dicts1[n] != {} and list_of_dicts2[n] != {}:
-            relative_distance = compute_relative_distance(classify_dicts[n], list_of_dicts1[n], list_of_dicts2[n])
-            if relative_distance < threshold:
-                return 1
-            elif 1 - relative_distance < threshold:
-                return 2
-            else:
-                n += 1
+        relative_distance = compute_relative_distance(classify_dicts[n], list_of_dicts1[n], list_of_dicts2[n])
+        if relative_distance < threshold:
+            return 1
+        elif 1 - relative_distance < threshold:
+            return 2
+        else:
+            n += 1
     return 0
 
