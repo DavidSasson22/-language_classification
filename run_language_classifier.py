@@ -15,17 +15,14 @@ def train_language_model():
     write_list_of_ngram_dicts(language2_dicts, language2.replace(".txt", ".dict"))
 
 
-def classify_unknow_text():
+def classify_unknown_text():
     """this functions takes from the user 2 txt files, writen in two different languages
     and one file written in an unknown language. the function determine if the unknown txt
     file is writen in the same language as one of the other txt files"""
-    language1 = ""
-    language2 = ""
-    filename = ""
     condition = False
     while condition is False:
-        language1 = input("Please enter the dictionary filename for language 1: ")
-        language2 = input("Please enter the dictionary filename for language 2: ")
+        language1 = input("Please enter the filename for language 1: ")
+        language2 = input("Please enter the filename for language 2: ")
         filename = input("Please enter the filename to classify: ")
         if filename == "exit":
             return None
