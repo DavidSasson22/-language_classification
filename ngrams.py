@@ -57,7 +57,16 @@ def compute_ngrams_frequency(txt4, k):
 def ngram_dict_to_string(ngram_dict):
     """this function takes a dictionary similar to the 'compute_ngram_frequency' output,
      and returns it as a string"""
-    result = "".join(("{}:{:.5f} ".format(key, value) for key, value in ngram_dict.items()))
+    result = "".join(i for i in str(ngram_dict) if i not in "}{'][ ").replace(",", " ")
+    return result
+
+
+def string_to_ngram_dict(str_dict):
+    result = {}
+    stage1 = str_dict.split(" ")
+    for element in stage1:
+        split_element = element.split(":")
+        result[split_element[0]] = float(split_element[1])
     return result
 
 
@@ -79,14 +88,13 @@ def load_list_of_ngram_dicts(input_file):
         stage1.remove("")
     for element in stage1:
         stage2 = element.split(" ")
-        stage2.remove("")
         stage3.append(stage2)
     dict_len = len(stage3)
     for i in range(0, dict_len):
         new_dict = {}
         for element in stage3[i]:
             key_value = element.split(":")
-            new_dict[key_value[0]] = key_value[1]
+            new_dict[key_value[0]] = float(key_value[1])
         stage4.append(new_dict)
         new_dict = {}
     return stage4
